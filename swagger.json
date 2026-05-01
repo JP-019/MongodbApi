@@ -1,0 +1,70 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Mi API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/ejemplo": {
+      "get": {
+        "summary": "Obtener todos los ejemplos",
+        "responses": {
+          "200": { "description": "Lista de ejemplos" }
+        }
+      },
+      "post": {
+        "summary": "Crear un nuevo ejemplo",
+        "responses": {
+          "200": { "description": "Ejemplo creado" }
+        }
+      }
+    },
+    "/api/ejemplo/{id}": {
+      "get": {
+        "summary": "Obtener un ejemplo por ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Ejemplo encontrado" },
+          "404": { "description": "Ejemplo no encontrado" }
+        }
+      },
+      "put": {
+        "summary": "Actualizar un ejemplo por ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Ejemplo actualizado" },
+          "404": { "description": "Ejemplo no encontrado" }
+        }
+      },
+      "delete": {
+        "summary": "Eliminar un ejemplo por ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Ejemplo eliminado" },
+          "404": { "description": "Ejemplo no encontrado" }
+        }
+      }
+    }
+  }
+}
